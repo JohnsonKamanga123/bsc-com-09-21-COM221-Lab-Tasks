@@ -126,7 +126,7 @@ int main(){
     cout << "There are " << sumOfWords << " words in the text file" << endl;
 
     string rev = Reverse(fileData);
-    cout << "The data in it's revrersed form : " << rev << endl;
+    cout << "The data in it's reversed form : " << rev << endl;
 
     string caps = secToUpper(fileData) ;
     cout << "Second letter of each word in caps : " << caps << endl;
