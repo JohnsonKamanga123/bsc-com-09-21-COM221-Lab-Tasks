@@ -3,17 +3,27 @@
 
 using namespace std;
 
+//returns true if input string is a number, otherwise returns false
+bool isNum(string num){
+    for(int i = 0 ; i < num.length() ; i++){
+        //if not a digit, return false
+        if(!isdigit(num[i])) return false;
+    }
+    return true;
+}
 
 //returns true if input is between 5 and 10, otherwise false
 bool isValid(string num){
 
+    //if not a number, return false
+    if(!isNum(num)) return false;
+
     //if the input has more than 2 char/digits, return false
-    if(num.length() > 2) return false;
+    else if(num.length() > 2) return false;
     
     //if it has 1 digit/char, check if it is out of range
     else if (num.length() == 1){
-        if(num[0] < '5' || num[0] > '9'){ 
-            cout << num[0] << endl;
+        if(num[0] < '5' || num[0] > '9'){
             return false;
         }
     }
@@ -31,7 +41,11 @@ int main(){
     do{     
         cout << "Enter an integer value between 5 and 10: " ;
         cin >> num ;
-        cout << num << endl ;
+        if(!isNum(num))
+            cout << "Sorry, you entered an invalid number, please try again" << endl;
+        else if(!isValid(num))
+            cout << "You entered " << num << ". PLease enter a number between 5 and 10" << endl;
+
       }while(!isValid(num));
 
 cout << "Your input value(" << num << ") has been accepted";
