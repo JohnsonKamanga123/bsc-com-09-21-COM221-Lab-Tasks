@@ -3,111 +3,22 @@
 #include <fstream>
 using namespace std;
 
-/*returns a string consisting of characters from some starting position
-until the next whitespace. if no word is found, an empty string is 
-returned*/
-string getWord(string text, int start){
+//function declarations
 
-    string word= "";
+string getWord(string text, int start);
 
-    for(int i = start ; i < text.length(); i++ ){
-        if(isspace(text[i]))
-            break;
-        word += text[i] ;
-    }
-    
-    return word;
-}
+int numWords(string text);
 
-//returns the number of words in a text file
-int numWords(string text){
-    int count = 0;
-    string word = "";
-    for(int i = 0 ; i < text.length() ; i++){
-        if(isalpha(text[i])){
-            word = getWord(text, i) ;
-            if(word != ""){
-                 count++ ;
-                i += word.length() - 1 ; 
-            }
-        }
-    }
+string secToUpper(string input);
 
-    return count;
-}
+bool isVowel(char in);
 
-//turns the second letter of each word to upper case
-string secToUpper(string input){
-    string text = input;
+int numOfVowels(string text);
 
-    for(int i = 0 ; i < text.length() ; i++){
+string Reverse(string input);
 
-         if( isspace(text[ (i - 2) > 0 ? (i - 2) : i ]) && isalpha(text[i]) ){
-                text[i] = toupper(text[i]);
-        }
-    }
+string getData(ifstream& in);
 
-    return text;
-}
-
-
-//returns true if arg is a vowel otherwise returns false
-bool isVowel(char in){
-    char ch = tolower(in);
-    switch(ch){
-        case 'a':
-            return true;
-        case 'e':
-            return true;
-        case 'i':
-            return true;
-        case 'o':
-            return true;
-        case 'u':
-            return true;
-        default:
-            return false;                
-
-    }
-
-}
-
-//returns the number of vowels in a string
-int numOfVowels(string text){
-    int count = 0;
-    for(int i = 0 ; i < text.length() ; i++){
-        if(isVowel(text[i])) count++ ;
-    }
-
-    return count;
-
-}
-
-//reverses the order of a string
-string Reverse(string input){
-char hold [input.length() + 1] ;
-    for(int i = (input.length() - 1), j = 0 ; i >= 0 && j < input.length() ; i-- , j++){
-        hold[j] = input[i];
-    }
-    hold[input.length()] = '\0';
-    return hold;
-}
-
-
-//retrieve all data from text file
-string getData(ifstream& in){
-    string data = "";
-
-        char ch;
-        do{  
-            ch = in.get();
-            if(ch != EOF){
-            data += ch; 
-            }
-        }while(!in.fail());
-
-    return data;
-}
 
 int main(){
 
@@ -135,4 +46,112 @@ int main(){
 
     return 0;
 
+}
+
+
+
+//function definition
+
+//retrieve all data from text file
+string getData(ifstream& in){
+    string data = "";
+
+        char ch;
+        do{  
+            ch = in.get();
+            if(ch != EOF){
+            data += ch; 
+            }
+        }while(!in.fail());
+
+    return data;
+}
+
+//reverses the order of a string
+string Reverse(string input){
+char hold [input.length() + 1] ;
+    for(int i = (input.length() - 1), j = 0 ; i >= 0 && j < input.length() ; i-- , j++){
+        hold[j] = input[i];
+    }
+    hold[input.length()] = '\0';
+    return hold;
+}
+
+//returns the number of vowels in a string
+int numOfVowels(string text){
+    int count = 0;
+    for(int i = 0 ; i < text.length() ; i++){
+        if(isVowel(text[i])) count++ ;
+    }
+
+    return count;
+
+}
+
+//returns true if arg is a vowel otherwise returns false
+bool isVowel(char in){
+    char ch = tolower(in);
+    switch(ch){
+        case 'a':
+            return true;
+        case 'e':
+            return true;
+        case 'i':
+            return true;
+        case 'o':
+            return true;
+        case 'u':
+            return true;
+        default:
+            return false;                
+
+    }
+
+}
+
+//turns the second letter of each word to upper case
+string secToUpper(string input){
+    string text = input;
+
+    for(int i = 0 ; i < text.length() ; i++){
+
+         if( isspace(text[ (i - 2) > 0 ? (i - 2) : i ]) && isalpha(text[i]) ){
+                text[i] = toupper(text[i]);
+        }
+    }
+
+    return text;
+}
+
+//returns the number of words in a text file
+int numWords(string text){
+    int count = 0;
+    string word = "";
+    for(int i = 0 ; i < text.length() ; i++){
+        if(isalpha(text[i])){
+            word = getWord(text, i) ;
+            if(word != ""){
+                 count++ ;
+                i += word.length() - 1 ; 
+            }
+        }
+    }
+
+    return count;
+}
+
+/*returns a string consisting of characters from some starting position
+until the next whitespace. if no word is found, an empty string is 
+returned*/
+string getWord(string text, int start){
+
+    string word= "";
+
+    for(int i = start ; i < text.length(); i++ ){
+        if(isspace(text[i]))
+            break;
+        word += text[i] ;
+    }
+    
+    return word;
 }

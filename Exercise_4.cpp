@@ -3,6 +3,30 @@
 
 using namespace std;
 
+//function declarations
+
+bool isNum(string num);
+
+bool isValid(string num);
+
+int main(){
+    string num = "";
+    do{     
+        cout << "Enter an integer value between 5 and 10: " ;
+        cin >> num ;
+        if(!isNum(num))
+            cout << "Sorry, you entered an invalid number, please try again" << endl;
+        else if(!isValid(num))
+            cout << "You entered " << num << ". PLease enter a number between 5 and 10" << endl;
+
+      }while(!isValid(num));
+
+cout << "Your input value(" << num << ") has been accepted";
+}
+
+
+//function defenitions
+
 //returns true if input string is a number, otherwise returns false
 bool isNum(string num){
     for(int i = 0 ; i < num.length() ; i++){
@@ -34,19 +58,4 @@ bool isValid(string num){
             return false;
     }
     return true; 
-}
-
-int main(){
-    string num = "";
-    do{     
-        cout << "Enter an integer value between 5 and 10: " ;
-        cin >> num ;
-        if(!isNum(num))
-            cout << "Sorry, you entered an invalid number, please try again" << endl;
-        else if(!isValid(num))
-            cout << "You entered " << num << ". PLease enter a number between 5 and 10" << endl;
-
-      }while(!isValid(num));
-
-cout << "Your input value(" << num << ") has been accepted";
 }

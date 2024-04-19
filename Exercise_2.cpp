@@ -4,6 +4,8 @@
 
 using namespace std;
 
+//function declaration
+
 string expirationMessage(int days);
 
 int main(){

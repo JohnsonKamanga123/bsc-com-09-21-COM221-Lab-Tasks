@@ -6,7 +6,6 @@ using namespace std;
 
 int main(){
 
-int sum [] {1,2,3,4,5,6};
     string list [] = {"B123",
                         "C234",
                         "A345",

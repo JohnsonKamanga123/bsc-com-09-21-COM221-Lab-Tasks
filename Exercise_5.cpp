@@ -4,6 +4,31 @@
 
 using namespace std;
 
+//function declarations
+
+int menu();
+
+float area(float side);
+
+float area(float length, float width);
+
+float area(float sideA, float sideB, float theta);
+
+void showArea(int choice);
+
+int main(){
+    int choice = 0;
+    do{
+        choice = menu();
+        if(choice != 4 )
+            showArea(choice);
+
+    }while(choice != 4);
+    return 0;
+}
+
+// function definitions
+
 /*displays menu and prompts user for selection. user input
 is then returned*/
 int menu(){
@@ -14,21 +39,6 @@ int menu(){
     cin >> choice ;
 
     return choice;
-}
-
-//returns the area of a square
-float area(float side){
-    return side * side ;
-}
-
-//returns the area of a rectangle
-float area(float length, float width){
-    return length * width ;
-}
-
-//returns the area of a triangle
-float area(float sideA, float sideB, float theta){
-    return sideA * sideB * sin(theta) ;
 }
 
 //prompts user to input parameters of shape and returns the area
@@ -72,13 +82,18 @@ void showArea(int choice){
 
 }
 
-int main(){
-    int choice = 0;
-    do{
-        choice = menu();
-        if(choice != 4 )
-            showArea(choice);
+//returns the area of a square
+float area(float side){
+    return side * side ;
+}
 
-    }while(choice != 4);
-    return 0;
+//returns the area of a rectangle
+float area(float length, float width){
+    return length * width ;
+}
+
+
+//returns the area of a triangle
+float area(float sideA, float sideB, float theta){
+    return sideA * sideB * sin(theta) ;
 }
