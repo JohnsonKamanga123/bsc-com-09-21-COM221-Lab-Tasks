@@ -11,27 +11,27 @@ int main(){
     random_device engine;
     uniform_int_distribution<int> randomNumbers(1,range);
     unsigned int daysUntilExpiration ;
-
         
-        for(int i = 0 ; i < 10 ; i++){
-            daysUntilExpiration = randomNumbers(engine) ;
-            cout << expirationMessage(daysUntilExpiration) << endl; 
+        for(int i = 0 ; i < 11 ; i++){
+        daysUntilExpiration = randomNumbers(engine) ;
+
+        cout << expirationMessage(daysUntilExpiration) << endl;
         }
 
 }
 
 string expirationMessage(int days){
-    if( days > 5 && days < 11){
+    switch (days){
+    case 10: case 9: case 8: case 7: case 6:
         return "Your subscription will expire soon. Renew now!" ;
-    }
-    else if( days > 1 && days < 6){
+    
+    case 5: case 4: case 3: case 2:
         return  "Your subscription will expire in " + to_string(days) + " days. \nRenew now and save 10% !"  ;
-    }    
-    else if( days == 1)
+    case 1 :
         return "Your subscription expires within a day! \nRenew now and save 20%" ;
-    else if (days == 0){
+    case 0 : {
         return "Your subscription has expired";    
-    }    
-
+        }    
+    }
     return "You have an active subscription";
 }
