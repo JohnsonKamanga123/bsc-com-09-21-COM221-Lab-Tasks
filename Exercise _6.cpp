@@ -114,8 +114,11 @@ string secToUpper(string input){
     string text = input;
 
     for(int i = 0 ; i < text.length() ; i++){
-
-         if( isspace(text[ (i - 2) > 0 ? (i - 2) : i ]) && isalpha(text[i]) ){
+        //if we are at the second character and it is part of a word
+        if(i == 1 && isalpha(text[i - 1]) && isalpha(text[i]) ){
+            text[i] = toupper(text[i]);
+        }        
+         else if( isspace(text[i - 2]) && isalpha(text[i]) ){
                 text[i] = toupper(text[i]);
         }
     }
@@ -148,8 +151,7 @@ string getWord(string text, int start){
     string word= "";
 
     for(int i = start ; i < text.length(); i++ ){
-        if(isspace(text[i]))
-            break;
+        if(isspace(text[i])) break;
         word += text[i] ;
     }
     
