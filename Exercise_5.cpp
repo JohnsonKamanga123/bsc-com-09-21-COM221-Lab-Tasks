@@ -95,5 +95,5 @@ float area(float length, float width){
 
 //returns the area of a triangle
 float area(float sideA, float sideB, float theta){
-    return sideA * sideB * sin(theta) ;
+    return 0.5 * sideA * sideB * sin(theta) ;
 }
