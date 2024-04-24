@@ -18,7 +18,7 @@ int main(){
     int length = sizeof(list)/sizeof(list[0]);                    
     for(int i = 0 ; i < length  ; i++){
         if(list[i][0] == 'B') 
-            cout << "Index " << i << " has " << list[i][0] << endl;
+            cout << list[i] << " at index " << i << " has " << list[i][0] << endl;
 
     }
 }
