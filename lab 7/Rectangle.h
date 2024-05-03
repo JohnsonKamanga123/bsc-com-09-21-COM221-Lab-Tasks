@@ -8,6 +8,9 @@ public:
     //default constructor
       Rectangle();
 
+    //overloaded constructor that takes the length and width
+      Rectangle(float length, float width);  
+
     //destructor  
       ~Rectangle();
 

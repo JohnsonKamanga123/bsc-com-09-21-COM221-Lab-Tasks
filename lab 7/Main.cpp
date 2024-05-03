@@ -4,26 +4,43 @@
 using namespace std;
 
 int main(){
-    //create an object of class Rectangle
-    Rectangle myRectangle = Rectangle();
+    //create an object called myRectangleOne of class Rectangle
+    Rectangle myRectangleOne = Rectangle();
 
-    //initialize variables to store user input
-    float length = 0.0;
-    float width = 0.0;
+    //initialize variables to store user input for myRectangleOne
+    float myLengthOne = 0.0;
+    float myWidthOne = 0.0;
 
-    //prompt user to enter rectangle's dimensions
-    cout << "Enter the rectangle's length: ";
-    cin >> length;
-    cin.ignore();
-    cout << "Enter the rectangle's width: ";
-    cin >> width;
+    //initialize variables to store user input for myRectangleTwo
+    float myLengthTwo = 0.0;
+    float myWidthTwo = 0.0;
 
-    //set object's dimensions to the ones inpuuted by the user
-    myRectangle.setLength(length);
-    myRectangle.setWidth(width);
+    //prompt user to enter myRectangleOne's dimensions
+    cout << "Enter myRectangleOne's length: ";
+    cin >> myLengthOne ;
+    cout << "Enter myRectangleOne's width: ";
+    cin >> myWidthOne ;
 
-    //print the area
-    cout << "The area of your rectangle is: " << myRectangle.getArea();
+    //prompt user to enter myRectangleTwo's dimensions
+    cout << "Enter myRectangleTwo's length: ";
+    cin >> myLengthTwo ;
+    cout << "Enter myRectangleTwo's width: ";
+    cin >> myWidthTwo ;
+
+    //set object's dimensions to the ones inputed by the user
+    myRectangleOne.setLength(myLengthOne);
+    myRectangleOne.setWidth(myWidthOne);
+
+    /*create an object called myRectangleTwo of class Rectangle 
+    using the overloaded constructor*/
+    Rectangle myRectangleTwo = Rectangle(myLengthTwo, myWidthTwo);
+
+    //print the area of myRectangleOne
+    cout << "The area of myRectangleOne is: " << myRectangleOne.getArea() << endl;
+
+    //print the area of MyRectangleTwo
+    cout << "The area of myRectangleTwo is: " << myRectangleTwo.getArea();
+
 
     return 0;
 }
