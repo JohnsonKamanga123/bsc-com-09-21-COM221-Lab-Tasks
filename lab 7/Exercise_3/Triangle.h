@@ -6,7 +6,7 @@ namespace shape{
 
         private:
         float base;
-        float heigth;
+        float height;
 
         public:
 
