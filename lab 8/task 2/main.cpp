@@ -32,5 +32,11 @@ int main(){
 
     cout << "John's Age: " << johnAge << endl;
 
+    string janeFirstName = Jane;
+    cout << "Jane's first name: " << janeFirstName << endl;
+
+    float janeWeight = Jane;
+    cout << "Jane's weight: " << janeWeight << endl;
+
     return 0;
 }
