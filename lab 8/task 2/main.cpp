@@ -12,5 +12,13 @@ int main(){
 
     cout << "The total weight: " << totalWeight << endl;
 
+    if(Jane == John){
+        cout << "This is the same person" << endl;
+    }
+    
+    if(Jane != John){
+        cout << "This is NOT the same person" << endl;
+    }
+
     return 0;
 }
