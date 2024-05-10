@@ -5,8 +5,8 @@
 using namespace std;
 
 int main(){
-    Person Jane = Person("Jane",60.0f);
-    Person John = Person("John", 75.0f);
+    Person Jane = Person("Jane", 60.0f, 20);
+    Person John = Person("John", 75.0f, 30);
 
     float totalWeight = Jane + John;
 
@@ -18,6 +18,14 @@ int main(){
     
     if(Jane != John){
         cout << "This is NOT the same person" << endl;
+    }
+
+    if(Jane < John){
+        cout << "Jane is younger than John" << endl;
+    }
+
+    if(John > Jane ){
+        cout << "John is older than Jane" << endl;
     }
 
     return 0;
