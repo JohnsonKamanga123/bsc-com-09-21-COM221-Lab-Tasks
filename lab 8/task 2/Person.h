@@ -8,6 +8,8 @@ class Person {
     public:
     Person();
     Person(float newWeight);
+    Person(string fName, float newWeight);
+    Person(string fName, float newWeight, int newAge);
 
     ~Person();
     //overload the add operator
