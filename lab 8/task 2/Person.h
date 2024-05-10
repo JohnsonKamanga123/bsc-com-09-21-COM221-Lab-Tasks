@@ -22,6 +22,12 @@ class Person {
     //overload inequality operator
     bool operator != (const Person& otherPerson);
 
+    //overload the less than operator
+    bool operator < (const Person& otherPerson);
+
+    //overload the greater than operator
+    bool operator > (const Person& otherPerson);
+
     private:
     float mWeight;
     string mFirstName;

@@ -46,3 +46,13 @@ have the same name*/
         return this->mFirstName != otherPerson.mFirstName ;
     }
 
+    //overload the less than operator
+    bool Person::operator < (const Person& otherPerson){
+        return this->mAge < otherPerson.mAge;
+    }
+
+    //overload the greater than operator
+    bool Person::operator > (const Person& otherPerson){
+        return this->mAge > otherPerson.mAge;
+    }
+
