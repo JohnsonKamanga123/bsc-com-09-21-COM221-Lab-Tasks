@@ -28,6 +28,8 @@ class Person {
     //overload the greater than operator
     bool operator > (const Person& otherPerson);
 
+    operator int();
+
     private:
     float mWeight;
     string mFirstName;

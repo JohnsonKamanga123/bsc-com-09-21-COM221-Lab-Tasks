@@ -56,3 +56,7 @@ have the same name*/
         return this->mAge > otherPerson.mAge;
     }
 
+    Person::operator int(){
+        return mAge;
+    }
+
