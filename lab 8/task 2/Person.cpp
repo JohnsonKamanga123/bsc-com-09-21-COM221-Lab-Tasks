@@ -60,3 +60,11 @@ have the same name*/
         return mAge;
     }
 
+    Person::operator string(){
+        return mFirstName;
+    }
+
+    Person::operator float(){
+        return mWeight;
+    } 
+
