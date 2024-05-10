@@ -33,3 +33,23 @@ Person::~Person(){
 float Person::operator+(const Person& otherPerson){
     return this->mWeight + otherPerson.mWeight;
 }
+
+/*overload equivalence operator. checks if two person objects
+have the same name*/
+    bool Person::operator == (const Person& otherPerson){
+        if( this->mFirstName == otherPerson.mFirstName)
+            return true;
+
+        return false;    
+    }
+
+    /*overload inequality operator. checks if two person objects
+        have different names*/
+    bool Person::operator != (const Person& otherPerson){
+        if( this->mFirstName != otherPerson.mFirstName)
+            return true;
+
+        return false;
+    }
+
+    

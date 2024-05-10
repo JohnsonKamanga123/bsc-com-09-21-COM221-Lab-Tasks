@@ -12,8 +12,15 @@ class Person {
     Person(string fName, float newWeight, int newAge);
 
     ~Person();
+
     //overload the add operator
     float operator+(const Person& otherPerson);
+
+    //overload equivalence operator
+    bool operator == (const Person& otherPerson);
+
+    //overload inequality operator
+    bool operator != (const Person& otherPerson);
 
     private:
     float mWeight;
