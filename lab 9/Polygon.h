@@ -8,5 +8,6 @@ class Polygon {
 
     public: 
     void setvalues(int width, int height);
-    virtual int Area();
+    virtual int Area() = 0;
+    void PrintArea();
 };
