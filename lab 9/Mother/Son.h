@@ -2,7 +2,7 @@
 
 #include "Mother.h"
 
-class Son {
+class Son : public Mother {
     public:
     Son(int a);
 };
