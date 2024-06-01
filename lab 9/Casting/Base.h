@@ -1,4 +1,4 @@
-#pragme once
+#pragma once
 
 class Base{
     virtual void DummyFunction();
