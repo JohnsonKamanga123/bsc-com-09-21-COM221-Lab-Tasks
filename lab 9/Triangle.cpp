@@ -1,5 +1,9 @@
 #include "Triangle.h"
 
 int Triangle::Area(){
-    return mWidth * meight / 2 ;
+    return mWidth * mHeight / 2 ;
+}
+
+Triangle::Triangle(int a, int b){
+    SetValues(a, b);
 }

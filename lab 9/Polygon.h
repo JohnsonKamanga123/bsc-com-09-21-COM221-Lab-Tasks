@@ -7,7 +7,7 @@ class Polygon {
     int mHeight;
 
     public: 
-    void setvalues(int width, int height);
+    void SetValues(int width, int height);
     virtual int Area() = 0;
     void PrintArea();
 };
